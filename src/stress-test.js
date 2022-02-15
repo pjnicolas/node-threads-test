@@ -29,9 +29,9 @@ const formatTime = (x) => {
 
 const main = async () => {
   const withoutThreadsSingle = await getTime(1, () => axios.get(`http://localhost:${API_PORT}/without-threads/10`))
-  const withoutThreadsMultiple = await getTime(14, () => axios.get(`http://localhost:${API_PORT}/without-threads/10`))
+  const withoutThreadsMultiple = await getTime(12, () => axios.get(`http://localhost:${API_PORT}/without-threads/10`))
   const withThreadsSingle = await getTime(1, () => axios.get(`http://localhost:${API_PORT}/with-threads/10`))
-  const withThreadsMultiple = await getTime(14, () => axios.get(`http://localhost:${API_PORT}/with-threads/10`))
+  const withThreadsMultiple = await getTime(12, () => axios.get(`http://localhost:${API_PORT}/with-threads/10`))
 
   console.log('WITHOUT THREADS  1 CALL:', formatTime(withoutThreadsSingle))
   console.log('WITHOUT THREADS 12 CALL:', formatTime(withoutThreadsMultiple))
